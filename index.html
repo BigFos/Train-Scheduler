@@ -24,10 +24,23 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Current Employee</div>
+                    <div class="panel-heading">Train Schedule</div>
                     <div class="panel-body">
                     </div>
-                    <table class="table table-striped">
+                    <table class="table table-hover" id='employee-table'>
+                <thead>
+                  <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+                    <!-- <table class="table table-striped" >
                         <tbody>
                             <tr>
                                 <td>Train Name</td>
@@ -46,7 +59,7 @@
                                 <td id="minutesAway" class="tableInfo"></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
             </div>
             <div class="col-md-1"></div>
