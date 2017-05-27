@@ -1,8 +1,8 @@
-  var config = {
-    apiKey: "AIzaSyD86Vx3_GEypvOAzbeSqx5cHe8bhxqDnPM",
-    authDomain: "train-32243.firebaseapp.com",
-    databaseURL: "https://train-32243.firebaseio.com",
-    storageBucket: "train-32243.appspot.com",
+var config = {
+    apiKey: "AIzaSyCIB6ZAG-d9bsm5KesKEWvPNH4c989dajo",
+    authDomain: "train-test-f5d2a.firebaseapp.com",
+    databaseURL: "https://train-test-f5d2a.firebaseio.com",
+    storageBucket: "train-test-f5d2a.appspot.com",
   };
     firebase.initializeApp(config);
     var database = firebase.database();
@@ -17,6 +17,7 @@
         event.preventDefault();
         trainName = $("#trainName").val().trim();
         dest = $("#dest").val().trim();
+        firstTrain = $("#firstTrain").val().trim();
         freq = $("#freq").val().trim();
         
         database.ref().push({
@@ -52,7 +53,7 @@
   console.log(dest);
   console.log(firstTrain);
   console.log(freq);
- var firstTrConv = moment(firstTrain, "hmm").format("hh:mm A");
+ var firstTrConv = moment(firstTrain, "hmm").format("hh:mm");
  console.log(firstTrConv);
         var firstTiConv = moment(firstTrConv, "hh:mm").subtract(1, "years");
         console.log(firstTiConv);
@@ -70,8 +71,9 @@
         console.log("MINUTES TILL TRAIN: " + nextArrival);
         // Next Train
         var nextTrain = moment().add(nextArrival, "minutes");
+        var nextTrainForm = moment(nextTrain).format("hh:mm A");
         console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
   // Add each train's data into the table
   $("#employee-table > tbody").append("<tr><td>" + trainName + "</td><td>" + dest + "</td><td>" +
-  freq + "</td><td>" + nextTrain + "</td><td>" + nextArrival + "</td></tr>");
+  freq + "</td><td>" + nextTrainForm + "</td><td>" + nextArrival + "</td></tr>");
 });
