@@ -19,7 +19,10 @@ var config = {
         dest = $("#dest").val().trim();
         firstTrain = $("#firstTrain").val().trim();
         freq = $("#freq").val().trim();
-        
+        if (firstTrain > 2400) {
+            alert("Please enter a valid military time between 0000 and 2400")
+        }
+        else{
         database.ref().push({
             trainName: trainName,
             dest: dest,
@@ -27,6 +30,8 @@ var config = {
             freq: freq,
             
         })
+    }
+        
         // $("#tName").html(trainName);
         // $("#destination").html(dest);
         // $("#frequency").html(freq);
