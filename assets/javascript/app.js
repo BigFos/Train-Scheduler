@@ -1,9 +1,9 @@
 var config = {
-    apiKey: "AIzaSyCIB6ZAG-d9bsm5KesKEWvPNH4c989dajo",
-    authDomain: "train-test-f5d2a.firebaseapp.com",
-    databaseURL: "https://train-test-f5d2a.firebaseio.com",
-    storageBucket: "train-test-f5d2a.appspot.com",
-};
+    apiKey: "AIzaSyA526cqpog5-ewbe3qv4L_QGGZs0zvII-0",
+    authDomain: "train-prod.firebaseapp.com",
+    databaseURL: "https://train-prod.firebaseio.com",
+    storageBucket: "train-prod.appspot.com",
+  };
 
 firebase.initializeApp(config);
 
@@ -50,6 +50,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     var nextTrain = moment().add(nextArrival, "minutes");
     var nextTrainForm = moment(nextTrain).format("hh:mm A");
 
-    $("#employee-table > tbody").append("<tr><td>" + trainName + "</td><td>" + dest + "</td><td>" +
+    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + dest + "</td><td>" +
         freq + "</td><td>" + nextTrainForm + "</td><td>" + nextArrival + "</td></tr>");
 });
